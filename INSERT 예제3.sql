@@ -54,3 +54,33 @@ VALUES
     ('김철수', 'C@naver.com','서울시 강남구 역삼동');
 
 SELECT * FROM customer;
+
+-- 놀이공원 이용권 테이블표를 만들어라.
+
+CREATE TABLE ticket(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    people_name VARCHAR(100) DEFAULT '무기명' NOT NULL,
+    ticket_name VARCHAR(50) DEFAULT '기본 입장권' NOT NULL,
+    people_number VARCHAR(50) DEFAULT '1명' NOT NULL,
+	car_number VARCHAR(50) DEFAULT '차량없음' NOT NULL
+);
+DESC ticket;
+
+INSERT INTO ticket (people_name, ticket_name, people_number, car_number)
+	VALUES
+	('김철수','자유 이용권','2명','65_3412'),
+    ('박영희','5번 이용권','3명','23_1412'),
+    ('김철수','자유 이용권','1명','45_2321');
+
+SELECT * FROM ticket;
+
+ALTER TABLE ticket MODIFY car_number VARCHAR(50) NOT NULL DEFAULT '차량없음';
+
+INSERT INTO ticket (people_name, ticket_name, people_number, car_number)
+	VALUES
+    (DEFAULT,DEFAULT,'4명',DEFAULT),
+    (DEFAULT,'5번 이용권',DEFAULT,'93_4234');
+    
+SELECT * FROM ticket;
+
+

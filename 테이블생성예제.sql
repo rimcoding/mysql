@@ -24,7 +24,8 @@ CREATE TABLE subject (
 	subject_id int,
     subject_name varchar(50) not null,
 	credit int not null,
-    -- varchar와 char의 차이점 char는 메모리 고정적으로 들어가고 varchar는 문자에따라 메모리가 다르다
+    -- varchar와 char의 차이점 char는 메모리 고정적으로 들어가고 varchar는 문자값의 갯수에 따라 메모리가 다르다
+    -- 예로 들어 char는 값을 몇개를 선언하든 고정적으로 메모리가 들어가고 varchar는 문자값 갯수에 따라 메모리가 달라진다.
     department varchar(50),
     professor char(50) not null
 );
